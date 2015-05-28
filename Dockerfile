@@ -11,6 +11,8 @@ RUN unzip artifactory.zip
 
 RUN sed -i -e 's/Xmx2g/Xmx512m/g' artifactory-*/bin/artifactory.default
 
+RUN chmod +x /artifactory-${ARTIFACTORY_VERSION}/bin/artifactory.sh
+
 # Expose the default endpoint
 EXPOSE 8081
 
